@@ -21,8 +21,8 @@ import java.util.List;
  */
 public class TopicLeisuresCounter {
 
-//    static final String ONS_REGION_ID = "mq-internet-access";
-    static final String ONS_REGION_ID = "cn-beijing";
+    static final String ONS_REGION_ID = "mq-internet-access";
+//    static final String ONS_REGION_ID = "cn-beijing";
 
     public static void main(String[] args) {
         String regionId = System.getProperty("regionId");
@@ -72,9 +72,9 @@ public class TopicLeisuresCounter {
         request.setPreventCache(System.currentTimeMillis());
         request.setAcceptFormat(FormatType.JSON);
         request.setTopic(topic);
-        request.setBeginTime(System.currentTimeMillis() - 30 * 24 * 3600 * 1000);
+        request.setBeginTime(System.currentTimeMillis() - 7 * 24 * 3600 * 1000);
         request.setEndTime(System.currentTimeMillis());
-        request.setPeriod(new Long(60 * 24));
+        request.setPeriod(new Long(10));
         request.setType(0);
         try {
             OnsTrendTopicInputTpsResponse response = iAcsClient.getAcsResponse(request);
